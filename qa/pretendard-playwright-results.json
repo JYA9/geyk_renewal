@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Pretendard loaded and inherited",
+    "passed": true,
+    "details": {
+      "loaded": true,
+      "otherFonts": [],
+      "scrollWidth": 1187,
+      "width": 1200
+    }
+  },
+  {
+    "name": "Desktop no horizontal overflow",
+    "passed": true,
+    "details": {
+      "loaded": true,
+      "otherFonts": [],
+      "scrollWidth": 1187,
+      "width": 1200
+    }
+  },
+  {
+    "name": "Category filter",
+    "passed": true
+  },
+  {
+    "name": "Combined year filter",
+    "passed": true
+  },
+  {
+    "name": "Empty state",
+    "passed": true
+  },
+  {
+    "name": "Reset restores all activities",
+    "passed": true
+  },
+  {
+    "name": "Activity dialog opens",
+    "passed": true
+  },
+  {
+    "name": "Dialog accessible name",
+    "passed": true
+  },
+  {
+    "name": "Dialog closes",
+    "passed": true
+  },
+  {
+    "name": "Recruitment date and closed state",
+    "passed": true
+  },
+  {
+    "name": "Mobile menu opens",
+    "passed": true
+  },
+  {
+    "name": "Mobile menu closes after navigation",
+    "passed": true
+  },
+  {
+    "name": "Mobile no horizontal overflow",
+    "passed": true,
+    "details": {
+      "font": "\"Pretendard Variable\", Pretendard, sans-serif",
+      "scrollWidth": 312,
+      "width": 325
+    }
+  },
+  {
+    "name": "Mobile recruitment dialog opens",
+    "passed": true
+  },
+  {
+    "name": "No browser errors",
+    "passed": true,
+    "details": []
+  }
+]
