@@ -26,6 +26,7 @@ pressMore.addEventListener('click', () => {
   pressLimit = 10;
   render();
   pressList.children[initialPressLimit]?.focus();
+  window.amplitude?.track('Press List Expanded');
 });
 
 function render(){const q=search.value.trim().toLocaleLowerCase();
