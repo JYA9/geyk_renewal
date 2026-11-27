@@ -42,4 +42,15 @@ results.addEventListener('click',e=>{const button=e.target.closest('[data-activi
 document.querySelector('#news-list').innerHTML=recruitment.map(r=>`<button class="news-row" data-recruit="${r.id}"><small>멤버 모집 · 마감</small><strong>${r.title}</strong><time>${r.date}</time><span aria-hidden="true">↗</span></button>`).join('');
 const dialog=document.querySelector('#detail');let lastFocus;function openDetail(html,trigger){lastFocus=trigger;document.querySelector('#detail-content').innerHTML=html;document.querySelector('#detail-content h2').id='detail-title';dialog.showModal();document.body.classList.add('modal-open');}function closeDetail(){dialog.close()}document.querySelector('.close').addEventListener('click',closeDetail);dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDetail()}});dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');lastFocus?.focus()});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-recruit]');if(!b)return;const r=recruitment.find(x=>x.id===Number(b.dataset.recruit));openDetail(`<div class="detail-label">MEMBER RECRUITMENT · 접수 마감</div><h2>${r.title}</h2>${r.id===25?`<p>“우리의 손으로 기후위기를 끝내는 내일!”<br>기후위기 해결의 실마리를 모색하고, 청년의 시각으로 변화를 만들어갈 동료를 모집한 공고입니다.</p><dl class="detail-info"><dt>서류 접수</dt><dd>2026.08.11 – 2026.08.21 · 마감</dd><dt>비대면 면접</dt><dd>2026.08.24 – 08.28</dd><dt>최종 합격자 발표 / 신입 OT</dt><dd>2026.08.31 / 2026.09.05 (필수 참석)</dd><dt>모집 팀</dt><dd>당사국총회 · 기후정서 · EMU레터 · 도시농업 · 생물다양성</dd></dl><p>전공·직업과 관계없이 기후변화에 뜻이 있는 청년들과 함께합니다. COP 현장 참관은 상황과 조건에 따라 선별·운영될 수 있습니다.</p><a class="source" href="https://geyk.org/wp-content/uploads/2026/08/GEYK-25기-지원서_홍길동.docx">지원서 양식 다운로드 ↗</a>`:`<p>${r.date}에 게시된 지난 모집공고입니다. 모집 자격과 활동 팀 등 자세한 내용은 GEYK 공식 공고 원문에서 확인해 주세요.</p>`}<a class="source" href="${r.url}" target="_blank" rel="noopener">공식 모집공고 원문 보기 ↗</a><p class="muted">2026.11.17 업데이트</p>`,b)});
+document.querySelectorAll('.nav-social-link').forEach(link => {
+  link.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'touch' && event.isPrimary) {
+      link.classList.add('is-pressed');
+    }
+  });
+  for (const type of ['pointerup', 'pointercancel', 'lostpointercapture', 'pointerleave']) {
+    link.addEventListener(type, () => link.classList.remove('is-pressed'));
+  }
+});
+
 const menu=document.querySelector('#menu'),nav=document.querySelector('#nav');function setMenu(open){nav.classList.toggle('open',open);menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');menu.textContent=open?'✕':'☰'}menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});const header=document.querySelector('#header');function updateHeader(){header.classList.toggle('scrolled',window.scrollY>0)}window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();render();

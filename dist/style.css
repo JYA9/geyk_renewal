@@ -80,3 +80,98 @@ footer a.logo::after {
 .back-to-top .press-more {
   margin: 0;
 }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+@media (max-width: 900px) {
+  .header-actions {
+    gap: 20px;
+  }
+}
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-social-link {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  color: #fff;
+}
+
+.scrolled .nav-social-link {
+  color: #000;
+}
+
+.nav-instagram {
+  --social-brand: #e1306c;
+}
+
+.nav-facebook {
+  --social-brand: #1877f2;
+}
+
+.nav-social-link svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  transition: transform 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-social .nav-social-link:hover {
+    color: var(--social-brand);
+  }
+
+  .nav-social-link:hover svg {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-actions #menu {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  .nav-social {
+    gap: 0;
+  }
+
+  .nav-social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-social-link svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-social .nav-social-link.is-pressed {
+    color: var(--social-brand);
+  }
+
+  .nav-social-link.is-pressed svg {
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-social-link:is(:hover, .is-pressed) svg {
+    transform: none;
+  }
+}
