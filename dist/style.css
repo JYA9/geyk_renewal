@@ -94,9 +94,13 @@ footer a.logo::after {
 }
 
 .nav-social {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 44px);
   align-items: center;
-  gap: 16px;
+}
+
+.nav-social > a {
+  height: 44px;
 }
 
 .nav-social-link {
@@ -145,15 +149,6 @@ footer a.logo::after {
     width: 44px;
     height: 44px;
     padding: 0;
-  }
-
-  .nav-social {
-    gap: 0;
-  }
-
-  .nav-social-link {
-    width: 44px;
-    height: 44px;
   }
 
   .nav-social-link svg {
@@ -365,7 +360,48 @@ footer a.logo::after {
 }
 
 @media (max-width: 380px) {
-  #header .logo { max-width: 95px; }
+  header a.logo {
+    width: 44px;
+    overflow: hidden;
+  }
+
+  #header a.logo {
+    padding: 0;
+  }
+
+  header a.logo img {
+    /* The circular emblem occupies the first 418 px of the 1351 px logo. */
+    width: calc(44px * 1351 / 418);
+    max-width: none;
+    flex: none;
+  }
+
+  #header a.logo::after {
+    display: none;
+  }
+
   #header .header-actions { gap: 4px; }
   .record-header-actions { gap: 8px; }
+}
+
+.hero-subtitle-break {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .hero-subtitle-break {
+    display: initial;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 700px) {
+  #nav {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  #nav .nav-join {
+    gap: 6px;
+    padding-inline: 8px;
+  }
 }
