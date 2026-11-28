@@ -40,7 +40,7 @@ document.querySelector('#news-list').innerHTML = recruitment.map(record =>
   `<a class="news-row" href="detail.html?recruit=${record.id}"><small>멤버 모집 · 마감</small><strong>${record.title}</strong><time>${record.date}</time><span aria-hidden="true">↗</span></a>`
 ).join('');
 
-document.querySelectorAll('.nav-social-link').forEach(link => {
+document.querySelectorAll('.nav-social-link, .hero-actions .pill').forEach(link => {
   link.addEventListener('pointerdown', event => {
     if (event.pointerType === 'touch' && event.isPrimary) {
       link.classList.add('is-pressed');
