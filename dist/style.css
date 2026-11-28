@@ -336,3 +336,36 @@ footer a.logo::after {
 .record-video figcaption {
   margin-top: 0.5em;
 }
+
+.language-switch {
+  display: inline-grid;
+  place-items: center;
+  min-width: 36px;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.language-switch:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.record-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .header-actions, #nav { gap: 8px; }
+  #nav a { white-space: nowrap; }
+  #nav .nav-join { gap: 10px; padding-inline: 12px; }
+}
+
+@media (max-width: 380px) {
+  #header .logo { max-width: 95px; }
+  #header .header-actions { gap: 4px; }
+  .record-header-actions { gap: 8px; }
+}
