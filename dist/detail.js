@@ -1,5 +1,6 @@
 const params = new URLSearchParams(location.search);
-const activity = activities.find(item => item.id === params.get('activity'));
+const activityId = params.get('activity');
+const activity = activities.find(item => item.id === (activityId === 'be' ? 'bee' : activityId));
 const notice = recruitment.find(item => String(item.id) === params.get('recruit'));
 const back = document.querySelector('#record-back');
 const content = document.querySelector('#record-content');
@@ -14,7 +15,7 @@ function recordHeading(record, label) {
 }
 
 function recordSource(url, label) {
-  return `<a class="text-link" href="${url}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`;
+  return `<a class="text-link" href="${url.replaceAll('&', '&amp;')}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`;
 }
 
 function recordFigure(photo, lazy = false) {
@@ -56,7 +57,7 @@ if (activity) {
     <div class="record-body">
       ${originalBody(`recruit-${notice.id}`)}
       <div class="record-sources">
-        ${recordSource(notice.url, 'GEYK 공식 모집공고')}
+        ${recordSource(detail.officialAnnouncement ?? notice.url, 'GEYK 공식 모집공고')}
         ${detail.form ? `<a class="text-link" href="${detail.form}">지난 지원서 양식 다운로드 ↓</a>` : ''}
       </div>
     </div>`;

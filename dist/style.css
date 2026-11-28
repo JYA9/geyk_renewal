@@ -320,3 +320,19 @@ footer a.logo::after {
   margin: 1.5em 0 0.5em;
   font-size: 1.15rem;
 }
+
+.record-video {
+  margin: 0 0 1em;
+}
+
+.record-video iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.record-video figcaption {
+  margin-top: 0.5em;
+}

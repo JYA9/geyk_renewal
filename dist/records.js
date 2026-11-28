@@ -49,6 +49,7 @@ const activityDetails = {
 
 const recruitmentDetails = {
   25: {
+    officialAnnouncement: 'https://www.instagram.com/p/Db51mAaAX85/?utm_source=ig_web_copy_link&gwpx=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA==',
     photo: { src: 'assets/records/recruit-25.webp', width: 1080, height: 1350, alt: '기후변화에 대응할 청년을 찾습니다. GEYK 25기 모집 카드뉴스 표지', caption: 'GEYK 25기 모집 카드뉴스 표지' },
     form: 'https://geyk.org/wp-content/uploads/2026/08/GEYK-25기-지원서_홍길동.docx',
   },
