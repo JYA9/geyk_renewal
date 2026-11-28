@@ -30,14 +30,12 @@ const activityDetails = {
     photos: [
       { src: 'assets/camp.jpg', width: 1200, height: 800, alt: '대만에서 열린 동아시아 기후 리더십 캠프 현장', caption: '제3회 동아시아 기후 리더십 캠프' },
     ],
-    backup: 'https://geyk.org/category/activities/page/6/',
   },
   march: {
     photos: [
       { src: 'assets/records/climate-march-2014.webp', width: 852, height: 640, alt: '서울 도심을 걸으며 기후행동 팻말을 든 시민들', caption: '2014년 서울 국민의 기후행진' },
       { src: 'assets/records/climate-march-2014-2.webp', width: 640, height: 852, alt: '온실가스 감축을 촉구하는 손팻말을 든 서울 기후행진 참가자', caption: '서울 국민의 기후행진 참가자의 메시지' },
     ],
-    backup: 'https://geyk.org/category/pressmedia/press/page/4/',
   },
   bee: {
     photos: [
